@@ -1,4 +1,4 @@
-from autogen_ext.models import OpenAIChatCompletionClient
+from autogen_ext.models.openai import OpenAIChatCompletionClient
 
 class AutogenModel:
     @classmethod
