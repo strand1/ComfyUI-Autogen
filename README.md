@@ -1,7 +1,7 @@
 # ComfyUI-Autogen
 A collection of nodes for using Autogen with ComfyUI 
-[AutoGen](https://github.com/microsoft/AutoGen)
-(assistant agents, group chats, code executor, etc.)
+
+[AutoGen](https://github.com/microsoft/AutoGen): assistant agents, group chats, code executor, etc.
 
 ## Features
 
@@ -29,6 +29,7 @@ autogen-core
 autogen-ext
 autogen-agentchat
 requests
+```
 
 ## Todo
-- vision models needs integration
+- vision models need integration
