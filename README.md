@@ -48,4 +48,4 @@ autogen-agentchat
 - workflow example coming soon
 
 ## Contributing
-Feel free to open issues or pull requests if you run into bugs, have ideas, or want to contribute enhancements. We welcome feedback to help improve these nodes and broaden their capabilities.
+Feel free to open issues or pull requests if you run into bugs, have ideas, or want to contribute enhancements. Feedback is welcome to help improve these nodes and their capabilities.
