@@ -37,7 +37,6 @@ pip install -r requirements.txt
 The nodes should appear under the “Autogen” category in your ComfyUI interface.
 
 ### Requirements:
-
 ```text
 autogen-core
 autogen-ext
@@ -46,3 +45,7 @@ autogen-agentchat
 
 ## Todo
 - vision models need integration
+- workflow example coming soon
+
+## Contributing
+Feel free to open issues or pull requests if you run into bugs, have ideas, or want to contribute enhancements. We welcome feedback to help improve these nodes and broaden their capabilities.
