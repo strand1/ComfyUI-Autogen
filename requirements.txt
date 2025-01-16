@@ -1,0 +1,4 @@
+autogen-core
+autogen-ext
+autogen-agentchat
+requests
