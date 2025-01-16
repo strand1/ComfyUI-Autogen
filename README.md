@@ -22,13 +22,26 @@ A collection of nodes for using Autogen with ComfyUI
    - Leverages `RoundRobinGroupChat` to let multiple agents interact in a conversation.  
    - Terminates the chat based on a max number of messages or a specific terminate string.
 
-## Requirements
+## Installation
+### Copy the folder
+Place the ComfyUI-Autogen folder into your `ComfyUI/custom_nodes/` directory.
+
+### Install dependencies
+Activate the same Python environment (or virtual environment) that ComfyUI uses, then run:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Restart ComfyUI
+The nodes should appear under the “Autogen” category in your ComfyUI interface.
+
+### Requirements:
 
 ```text
 autogen-core
 autogen-ext
 autogen-agentchat
-requests
 ```
 
 ## Todo
