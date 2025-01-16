@@ -17,8 +17,5 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "AutogenCodeExecutor": "Autogen Code Executor",
 }
 
-# Optional: Specify a web directory for static assets (if applicable)
-WEB_DIRECTORY = "./web"
-
 # Export all variables for ComfyUI to recognize
-__all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS', 'WEB_DIRECTORY']
+__all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
