@@ -1,6 +1,5 @@
 from autogen_agentchat.teams import RoundRobinGroupChat
 from autogen_agentchat.conditions import MaxMessageTermination, TextMentionTermination
-from PIL import Image
 import asyncio
 import sys
 import io
