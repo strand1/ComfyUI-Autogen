@@ -1,4 +1,3 @@
 autogen-core
-autogen-ext
+autogen-ext[openai]
 autogen-agentchat
-requests
