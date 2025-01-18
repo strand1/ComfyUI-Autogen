@@ -64,12 +64,6 @@ class AutogenGroupChat:
                             self.last_message = f"{message.source}: {message.content}"
                             print(f"[Interactive Chat] {self.last_message}")
                             chat_output.append(f"{message.source}: {message.content}")
-            
-                            # Clean and process the last message
-                            if message.content.strip().endswith(terminate_string):
-                                self.last_message = message.content.strip()[:-len(terminate_string)].strip()
-                            else:
-                                self.last_message = message.content.strip()
 
             asyncio.run(capture_chat())
 
