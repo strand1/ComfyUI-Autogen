@@ -15,9 +15,9 @@ class AutogenAssistantAgent:
             },
             "optional": {
                 "system_message": ("STRING", {"default": "You are a helpful assistant.", "multiline": True}),
-                "tool_1": ("STRING", {"default": "None", "options": cls._get_available_tools()}),
-                "tool_2": ("STRING", {"default": "None", "options": cls._get_available_tools()}),
-                "temperature": ("FLOAT", {"default": 0.1, "min": 0.0, "max": 1.0, "step": 0.1}),
+                "tool_1": ("STRING", {"default": "None"}),
+                "tool_2": ("STRING", {"default": "None"}),
+                "temperature": ("FLOAT", {"default": 0.5, "min": 0.0, "max": 1.0, "step": 0.1}),
                 "max_tokens": ("INT", {"default": 1200, "min": 200, "max": 16200, "step": 200}),
             },
         }
@@ -27,37 +27,9 @@ class AutogenAssistantAgent:
     FUNCTION = "initialize_assistant_agent"
     CATEGORY = "Autogen"
 
-     # Class-level cache for tools
-    _tools_cache = None
-    _tools_last_checked = None
-    _tools_dir_path = tools_dir = os.path.join(os.path.dirname(__file__), "tools")
-
-    @classmethod
-    def _get_available_tools(cls):
-        """Scan the tools directory and list available tools only if it has changed."""
-        tools_dir = cls._tools_dir_path
-
-        if not os.path.exists(tools_dir):
-            print(f"[AutogenAssistantAgent] Tools directory not found: {tools_dir}")
-            return ["None"]
-
-        # Get the last modification time of the directory
-        last_modified = os.stat(tools_dir).st_mtime
-
-        # Only rescan if directory has been modified or cache is empty
-        if cls._tools_cache is None or cls._tools_last_checked != last_modified:
-            print(f"[AutogenAssistantAgent] Scanning tools directory: {tools_dir}")
-            cls._tools_cache = ["None"] + [
-                f.split(".")[0] for f in os.listdir(tools_dir) if f.endswith(".py") 
-            ]
-            cls._tools_last_checked = last_modified
-            print(f"[AutogenAssistantAgent] Available tools: {cls._tools_cache}")
-
-        return cls._tools_cache
-
     @staticmethod
     def _load_tool(tool_name):
-        """Dynamically load a tool from the tools directory."""
+        """Load a tool from the tools directory."""
         tools_dir = os.path.join(os.path.dirname(__file__), "tools")
         tool_path = os.path.join(tools_dir, f"{tool_name}.py")
 
@@ -92,11 +64,11 @@ class AutogenAssistantAgent:
         # Load tools
         tools = []
         for tool_name in [tool_1, tool_2]:
-            if tool_name != "None":
+            if tool_name and tool_name != "None":
                 tool = self._load_tool(tool_name)
                 if tool:
                     tools.append(tool)
-    
+
         # Initialize AssistantAgent
         assistant_agent = AssistantAgent(
             name=agent_name,
@@ -111,4 +83,3 @@ class AutogenAssistantAgent:
     
         print(f"[AutogenAssistantAgent] Initialized assistant agent: {assistant_agent}")
         return (assistant_agent,)
-
