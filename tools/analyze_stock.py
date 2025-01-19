@@ -1,4 +1,4 @@
-tool_name = "stock_analysis_tool"
+tool_name = "analyze_stock"
 
 import os
 import asyncio
