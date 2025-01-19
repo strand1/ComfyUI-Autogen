@@ -45,6 +45,7 @@ autogen-agentchat
 ## Example 
 This example uses the Company Research sample from Autogen [[here](https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/examples/company-research.html)]
 ![Company Research Workflow](workflows/company_report_screenshot.png)
+*note the `analyze_stock` tool uses the `yfinance` library to retrieve stock information. It will need to be installed for this tool to work.
 
 ## Todo
 - vision models need integration
