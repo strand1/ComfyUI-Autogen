@@ -1,0 +1,15 @@
+[project]
+name = "autogen"
+description = "A collection of nodes for using Autogen with ComfyUI\n[a/AutoGen](https://github.com/microsoft/AutoGen): assistant agents, group chats, code executor, etc."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["io", "sys", "os", "asyncio", "autogen-core", "autogen-ext[openai]", "autogen-agentchat"]
+
+[project.urls]
+Repository = "https://github.com/strand1/ComfyUI-Autogen"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "ComfyUI-Autogen"
+Icon = ""
