@@ -1,7 +1,7 @@
 # ComfyUI-Autogen
 A collection of nodes for using Autogen with ComfyUI 
 
-[AutoGen](https://github.com/microsoft/AutoGen): assistant agents, group chats, code executor, etc.
+[[AutoGen Stable](https://microsoft.github.io/autogen/stable/)]: assistant agents, group chats, code executor, etc.
 
 ## Features
 
