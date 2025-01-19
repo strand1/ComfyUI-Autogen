@@ -42,10 +42,12 @@ autogen-core
 autogen-ext
 autogen-agentchat
 ```
+## Example 
+This example uses the Company Research sample from Autogen [[here](https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/examples/company-research.html)]
+![Company Research Workflow](workflows/company_report_screenshot.png)
 
 ## Todo
 - vision models need integration
-- workflow example coming soon
 
 ## Contributing
 Feel free to open issues or pull requests if you run into bugs, have ideas, or want to contribute enhancements. Feedback is welcome to help improve these nodes and their capabilities.
