@@ -1,0 +1,393 @@
+{
+  "last_node_id": 13,
+  "last_link_id": 12,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "AutogenAssistantAgent",
+      "pos": [
+        1158.9471435546875,
+        451.12255859375
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "autogen_model",
+          "type": "MODEL",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant_agent",
+          "type": "AGENT",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AutogenAssistantAgent"
+      },
+      "widgets_values": [
+        "stock_analyst",
+        "You are a helpful analyst assistant. Perform data analysis using your tool",
+        "stock_analysis_tool",
+        "None",
+        0.1,
+        1200
+      ]
+    },
+    {
+      "id": 6,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        2096.16552734375,
+        149.34571838378906
+      ],
+      "size": [
+        397.89739990234375,
+        605.7828979492188
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 7,
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 7,
+      "type": "Display Any (rgthree)",
+      "pos": [
+        1599.9832763671875,
+        442.60693359375
+      ],
+      "size": [
+        474.6593322753906,
+        618.7199096679688
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 8,
+          "dir": 3
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Display Any (rgthree)"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "AutogenAssistantAgent",
+      "pos": [
+        1156.7061767578125,
+        198.2566680908203
+      ],
+      "size": [
+        400,
+        200
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "autogen_model",
+          "type": "MODEL",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant_agent",
+          "type": "AGENT",
+          "links": [
+            3
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AutogenAssistantAgent"
+      },
+      "widgets_values": [
+        "search_agent",
+        "You are a helpful AI assistant. Solve tasks using your search tool.",
+        "duck_duck_go",
+        "None",
+        0.1,
+        1200
+      ]
+    },
+    {
+      "id": 5,
+      "type": "AutogenAssistantAgent",
+      "pos": [
+        1159.8980712890625,
+        712.263427734375
+      ],
+      "size": [
+        402.7220153808594,
+        241.50794982910156
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "autogen_model",
+          "type": "MODEL",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "assistant_agent",
+          "type": "AGENT",
+          "links": [
+            6
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AutogenAssistantAgent"
+      },
+      "widgets_values": [
+        "report_agent",
+        "You are a helpful assistant that can generate a comprehensive report on a given topic based on search and stock analysis. When you done with generating the report, reply with TERMINATE.",
+        "None",
+        "None",
+        0.4,
+        1200
+      ]
+    },
+    {
+      "id": 4,
+      "type": "AutogenGroupChat",
+      "pos": [
+        1605.64111328125,
+        197.7384796142578
+      ],
+      "size": [
+        400,
+        224
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "agent_1",
+          "type": "AGENT",
+          "link": 3
+        },
+        {
+          "name": "agent_2",
+          "type": "AGENT",
+          "link": 4
+        },
+        {
+          "name": "agent_3",
+          "type": "AGENT",
+          "link": 6,
+          "shape": 7
+        },
+        {
+          "name": "agent_4",
+          "type": "AGENT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "agent_5",
+          "type": "AGENT",
+          "link": null,
+          "shape": 7
+        },
+        {
+          "name": "agent_6",
+          "type": "AGENT",
+          "link": null,
+          "shape": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "console_output",
+          "type": "STRING",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "last_chat",
+          "type": "STRING",
+          "links": [
+            8
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AutogenGroupChat"
+      },
+      "widgets_values": [
+        "Write a financial report on DOMO for year 2024.",
+        10,
+        "TERMINATE"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "AutogenModel",
+      "pos": [
+        790.0198364257812,
+        201.50682067871094
+      ],
+      "size": [
+        315,
+        178
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "autogen_model",
+          "type": "MODEL",
+          "links": [
+            1,
+            2,
+            5
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AutogenModel"
+      },
+      "widgets_values": [
+        "gpt-4o-mini",
+        "https://api.openai.com/v1",
+        "api_key_here",
+        "False",
+        "True",
+        "False"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      1,
+      0,
+      2,
+      0,
+      "MODEL"
+    ],
+    [
+      3,
+      2,
+      0,
+      4,
+      0,
+      "AGENT"
+    ],
+    [
+      4,
+      3,
+      0,
+      4,
+      1,
+      "AGENT"
+    ],
+    [
+      5,
+      1,
+      0,
+      5,
+      0,
+      "MODEL"
+    ],
+    [
+      6,
+      5,
+      0,
+      4,
+      2,
+      "AGENT"
+    ],
+    [
+      7,
+      4,
+      0,
+      6,
+      0,
+      "*"
+    ],
+    [
+      8,
+      4,
+      1,
+      7,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6115909044841469,
+      "offset": [
+        -568.2555904366733,
+        -67.91206145177239
+      ]
+    },
+    "node_versions": {
+      "ComfyUI-Autogen": "eeddf8289c25221163e60a7668eebc21edb475f7",
+      "rgthree-comfy": "847ec8939dc2828f757ddd0c99d67a830fb1bc77"
+    }
+  },
+  "version": 0.4
+}
