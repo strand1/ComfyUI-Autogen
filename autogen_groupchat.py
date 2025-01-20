@@ -60,12 +60,12 @@ class AutogenGroupChat:
                 async for task_result in team.run_stream(task=task_input):
                     if hasattr(task_result, "messages"):
                         for message in task_result.messages:
-                            self.chat_log.append(f"{message.source}: {message.content}")
-                            self.last_message = f"{message.source}: {message.content}"
-                            print(f"[Interactive Chat] {self.last_message}")
-                            chat_output.append(f"{message.source}: {message.content}")
-
-            asyncio.run(capture_chat())
+                            message_content = f"{message.source}: {message.content}"
+                            self.chat_log.append(message_content)
+                            if terminate_string not in message.content:
+                                self.last_message = message.content              
+                            print(f"[Interactive Chat] {message_content}")
+                            chat_output.append(message_content)
 
         except RuntimeError as e:
             print(f"[AutogenGroupChat] Runtime error: {e}")
