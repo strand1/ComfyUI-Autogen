@@ -1,6 +1,3 @@
-io
-sys
-os
 asyncio
 autogen-core
 autogen-ext[openai]
